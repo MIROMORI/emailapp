@@ -3,6 +3,7 @@ package emailapp;
 import java.util.Scanner;
 
 public class Email {
+    //atributes of email class
     private String firstName, lastName, department, password, recoveryEmail;
     private int mailBoxCapacity = 500;
 
@@ -31,6 +32,7 @@ public class Email {
                 + "3 for accounting\n"
                 + "0 for none\n"
                 + "Code department: ");
+        //select department
         try (Scanner in = new Scanner(System.in)) {
             int depChoice = in.nextInt();
             switch (depChoice){
@@ -78,7 +80,7 @@ public class Email {
     public void setPassword(String password) {
         this.password = password;
     }
-
+    //get methods
     public String getRecoveryEmail() {
         return recoveryEmail;
     }
@@ -90,6 +92,7 @@ public class Email {
     public String getPassword() {
         return password;
     }
+    //show information
     public void showInfo(){
         String email = this.firstName.toLowerCase() + "." + this.lastName.toLowerCase() + "@" + this.department.toLowerCase() + "." + "company.com";;
         System.out.println("Name: " + this.firstName + " " + this.lastName + "\nEmail: " + email + "\nMailbox capacity: " + this.mailBoxCapacity + "mb");}
